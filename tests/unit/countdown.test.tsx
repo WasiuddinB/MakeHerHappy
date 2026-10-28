@@ -5,7 +5,13 @@ import { BirthdayCountdown } from "@/components/birthday/BirthdayCountdown";
 import { birthday } from "@/content/birthday";
 import { getBirthdayWindow } from "@/lib/date-utils";
 
-const { start, end } = getBirthdayWindow(birthday.date, birthday.date.timeZone);
+/* A fixed date, deliberately NOT the one in the content file: these tests
+ * check the countdown's behaviour, so they must keep passing after someone
+ * runs `npm run setup` and puts in their own birthday. */
+const TEST_DAY = { year: 2026, month: 11, day: 9 };
+const TEST_ZONE = "Asia/Dhaka";
+
+const { start, end } = getBirthdayWindow(TEST_DAY, TEST_ZONE);
 const props = {
   start,
   end,
