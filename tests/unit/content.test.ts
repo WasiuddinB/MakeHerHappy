@@ -6,7 +6,7 @@ import { describe, expect, it } from "vitest";
 import { birthday } from "@/content/birthday";
 import type { BirthdayContent } from "@/content/types";
 import { assertValidTimeZone, normalizeDay } from "@/lib/date-utils";
-import { getSections } from "@/lib/sections";
+import { getSections, type SectionId } from "@/lib/sections";
 import { parsePublicUrl } from "@/lib/site-url";
 
 const filled = (value: string | undefined) => typeof value === "string" && value.trim().length > 0;
@@ -77,24 +77,31 @@ describe("birthday content", () => {
 });
 
 describe("getSections", () => {
-  it("lists every section in order, with chapter numbers after the cover", () => {
+  // Written against whatever is in the content file, so it keeps passing
+  // after `npm run setup` — even if a section has been emptied out.
+  const ORDER: SectionId[] = [
+    "top",
+    "countdown",
+    "letter",
+    "adore",
+    "story",
+    "gallery",
+    "notes",
+    "choose",
+    "cake",
+    "finale",
+  ];
+
+  it("keeps the chapters in order and numbers them from one", () => {
     const sections = getSections(birthday);
-    expect(sections.map((section) => section.id)).toEqual([
-      "top",
-      "countdown",
-      "letter",
-      "adore",
-      "story",
-      "gallery",
-      "notes",
-      "choose",
-      "cake",
-      "finale",
-    ]);
+    const ids = sections.map((section) => section.id);
+
+    expect(ids).toEqual(ORDER.filter((id) => ids.includes(id)));
+    expect(ids).toContain("top");
     expect(sections[0].chapter).toBeNull();
-    expect(sections.slice(1).map((section) => section.chapter)).toEqual([
-      1, 2, 3, 4, 5, 6, 7, 8, 9,
-    ]);
+    expect(sections.slice(1).map((section) => section.chapter)).toEqual(
+      sections.slice(1).map((_, index) => index + 1),
+    );
   });
 
   it("leaves out sections whose content is empty", () => {

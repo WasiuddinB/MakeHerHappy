@@ -31,6 +31,7 @@ You need **Node.js 24** (or 22.12+) and npm.
 
 ```bash
 npm install
+npm run setup   # asks for the names, the date and your words
 npm run dev
 ```
 
@@ -38,11 +39,37 @@ Open <http://localhost:3000>. Every time you save a file, the page updates.
 
 ---
 
-## ✏️ Personalisation checklist
+## ✏️ Making it yours
 
-Everything she sees comes from **one file**: [`src/content/birthday.ts`](src/content/birthday.ts).
-Everything marked ✏️ in it is sample text: warm, but not about _you two_
-yet. Nothing in it claims real memories; that part is yours to write.
+### The easy way: `npm run setup`
+
+```bash
+npm run setup
+```
+
+A guided set of questions that writes [`src/content/birthday.ts`](src/content/birthday.ts)
+for you. It asks for her name, what you call her, your name, the date and the
+time zone — then offers to go through every section's words as well (the
+letter, the reasons, the timeline, the notes, the surprises, the cake and the
+final dedication).
+
+- **Press Enter** at any question to keep what's already there.
+- **Run it as often as you like.** Your answers become the defaults next time,
+  so you can come back and change one thing.
+- Your previous file is saved as `src/content/birthday.ts.bak` first, and
+  nothing is written until the last question is answered.
+- Anything you've already written by hand is left alone — only sample text
+  that still matches the old names gets carried over.
+
+Photos and music are files, so they aren't part of the questions. See
+[Photos](#photos) and [Music](#music-optional).
+
+### The direct way: edit one file
+
+Everything she sees comes from **one file**:
+[`src/content/birthday.ts`](src/content/birthday.ts). Everything marked ✏️ in
+it is sample text: warm, but not about _you two_ yet. Nothing in it claims
+real memories; that part is yours to write.
 
 - [ ] **Names**: the three lines at the top of the file (`HER_NAME`,
       `HER_NICKNAME`, `YOUR_NAME`). They flow into every section.
@@ -214,6 +241,7 @@ Official docs:
 
 | Command               | What it does                                                  |
 | --------------------- | ------------------------------------------------------------- |
+| `npm run setup`       | Guided questions that write your content file                 |
 | `npm run dev`         | Local development server at <http://localhost:3000>           |
 | `npm run build`       | Production build (also type-checks)                           |
 | `npm run start`       | Serve the production build                                    |
@@ -226,6 +254,11 @@ Official docs:
 | `npm run qr -- <url>` | Printable QR code for the deployed URL                        |
 
 First time running browser tests: `npx playwright install chromium`.
+
+`npm run check` keeps passing after you've made the site your own — it's the
+gate to use before deploying. The browser tests (`npm run test:e2e`) click on
+the sample wording ("Open when you need a smile", "Photo 1 of 8"), so once
+you've replaced the content some of them will need their text updated too.
 
 ### Tech
 
@@ -262,6 +295,8 @@ public/images/             your photos (see public/images/README.md)
 public/audio/              optional music
 tests/unit/                Vitest: logic, components, content checks
 tests/e2e/                 Playwright: journeys, layout, accessibility, clock
+scripts/setup.mjs          `npm run setup` — the guided questions
+scripts/content-writer.mjs writes src/content/birthday.ts back out
 scripts/make-qr.mjs        printable QR code
 ```
 

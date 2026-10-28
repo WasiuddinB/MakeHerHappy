@@ -1,0 +1,15 @@
+# Store every text file with LF in the repository, whatever the contributor's
+# operating system does locally. Without this, Windows checkouts commit CRLF
+# and every file looks "changed" to everyone else.
+* text=auto eol=lf
+
+# Binary files git must never touch.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.avif binary
+*.ico binary
+*.mp3 binary
+*.woff binary
+*.woff2 binary
