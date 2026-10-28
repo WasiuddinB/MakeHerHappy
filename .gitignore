@@ -30,6 +30,9 @@
 /share-qr.svg
 /share-qr.png
 
+# backups written by `npm run setup`
+*.bak
+
 # debug
 npm-debug.log*
 yarn-debug.log*
