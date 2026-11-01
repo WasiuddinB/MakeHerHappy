@@ -228,41 +228,49 @@ export const birthday: BirthdayContent = {
         alt: "Placeholder for our first photo together",
         caption: "Our first photo together",
         orientation: "portrait",
+        src: "/images/gallery/1.jpg"
       },
       {
         alt: "Placeholder for a photo from a favorite trip",
         caption: "A favorite trip",
         orientation: "landscape",
+        src: "/images/gallery/3.jpg"
       },
       {
         alt: "Placeholder for a photo of a slow weekend morning",
         caption: "Slow weekend mornings",
         orientation: "square",
+        src: "/images/gallery/5.jpg"
       },
       {
         alt: "Placeholder for a photo of her laughing",
         caption: "That laugh",
-        orientation: "portrait",
+        orientation: "landscape",
+        src: "/images/gallery/7.jpg"
       },
       {
         alt: "Placeholder for a golden-hour photo",
         caption: "Golden hour",
         orientation: "landscape",
+        src: "/images/gallery/2.jpg"
       },
       {
         alt: "Placeholder for a photo from a celebration together",
         caption: "Celebrating together",
         orientation: "square",
+        src: "/images/gallery/4.jpg"
       },
       {
         alt: "Placeholder for a photo of a day to remember",
         caption: "A day I'll never forget",
-        orientation: "portrait",
+        orientation: "square",
+        src: "/images/gallery/6.jpg"
       },
       {
         alt: "Placeholder for a photo of the two of us",
         caption: "Us, exactly as we are",
-        orientation: "landscape",
+        orientation: "portrait",
+        src: "/images/gallery/8.jpg"
       },
     ],
   },
