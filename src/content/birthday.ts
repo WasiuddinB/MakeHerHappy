@@ -176,6 +176,7 @@ export const birthday: BirthdayContent = {
         description:
           "Somewhere, somehow, our paths crossed at UIU and quietly, before either of us knew it, everything began to change.",
         icon: "sparkles",
+        photo: { src: "/images/gallery/1.jpg", alt: "Describe the photo" }
       },
       {
         when: "A little later",
@@ -183,6 +184,7 @@ export const birthday: BirthdayContent = {
         description:
           "There was a moment at panam nagar, maybe small, maybe silly; when I realised I never wanted to stop making you smile.",
         icon: "smile",
+        photo: { src: "/images/gallery/3.jpg", alt: "Describe the photo" }
       },
       {
         when: "One perfect day",
@@ -190,6 +192,7 @@ export const birthday: BirthdayContent = {
         description:
           "Some days feel as if they were made just for the two of us. I'd live the panam day again in a heartbeat.",
         icon: "sun",
+        photo: { src: "/images/gallery/5.jpg", alt: "Describe the photo" }
       },
       {
         when: "Always",
@@ -197,6 +200,7 @@ export const birthday: BirthdayContent = {
         description:
           "The swimming moments plays back in my mind whenever I need a reason to smile.",
         icon: "camera",
+        photo: { src: "/images/gallery/7.jpg", alt: "Describe the photo" }
       },
       {
         when: "Every day since",
@@ -204,6 +208,7 @@ export const birthday: BirthdayContent = {
         description:
           "In big moments and small ones, you keep reminding me how lucky I am to call you mine.",
         icon: "heart",
+        photo: { src: "/images/gallery/2.jpg", alt: "Describe the photo" }
       },
       {
         when: "Next",
@@ -211,6 +216,7 @@ export const birthday: BirthdayContent = {
         description:
           "New places, old traditions, slow mornings and loud adventures, I can't wait to share every one of them with you.",
         icon: "infinity",
+        photo: { src: "/images/gallery/4.jpg", alt: "Describe the photo" }
       },
     ],
   },
